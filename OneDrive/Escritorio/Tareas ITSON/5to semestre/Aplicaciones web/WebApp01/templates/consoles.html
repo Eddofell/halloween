@@ -1,0 +1,70 @@
+{% include 'header.html'%}
+  <main class="flex-grow-1">
+    <header class="bg-primary text-white py-4 mb-3">
+      <div class="container-fluid px-5">
+        <h1 class="fw-bold text-start mb-2">
+          Consolas
+        </h1>
+        <p class="lead text-start mb-0 fs-6">
+          De las buenas
+        </p>
+      </div>
+    </header>
+    <!-- Breadcrumb -->
+    <div class="container-fluid px-5 mb-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Menú 1</li>
+          <li class="breadcrumb-item active" aria-current="page">Menú 2</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="container-fluid px-5 pb-5">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Las mejores consolas de videojuegos</h2>
+      </div>
+    </div>
+
+    <div class = "container-fluid px-5 pb-5">
+      <div class = "table-responsive">
+        <table class = "table table-bordered align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>
+                Name
+              </th>
+              <th>
+                Model
+              </th>
+              <th>
+                Launch
+              </th>
+              <th>
+                Color
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for a in consoles %}
+            <tr>
+              <td>{{a.name}}</td>
+              <td>{{a.model}}</td>
+              <td>{{a.launch}}</td>
+              <td>{{a.color}}</td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="4">No hay registro de Consolas.</td>
+            </tr>
+            {% endfor %}
+
+            
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+{% include 'footer.html'%}
